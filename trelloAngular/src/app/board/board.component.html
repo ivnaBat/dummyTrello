@@ -1,0 +1,22 @@
+<button mat-raised-button (click)="openDialogForAddingList('Write the name of new list!')"
+    style="margin-top: 10px;float: right;">Add task list</button>
+
+
+<div style="display:flex; flex-direction: row;">
+    <tr *ngFor="let list of taskLists">
+        <mat-card fxFlex="32" class="custom" style="width: 300px; margin-top: 60px; margin-right: 20px; margin-left: 20px;">
+            <mat-card-title>{{list.name}}</mat-card-title>
+    <tr *ngFor="let task of tasks">
+        <ng-container *ngIf="task.taskList.id==list.id">
+            <mat-card class="custom" style="margin: 10px; width: 200px; padding: 10px;">
+                {{task.description}}
+            </mat-card>
+        </ng-container>
+    </tr>
+    <button mat-raised-button (click)="openDialogForAddingTask('Write the description of new task!',list.id)"
+        style="margin-top: 10px;margin-bottom: 70px;float: right;">Add task</button>
+
+    </mat-card>
+
+    </tr>
+</div>

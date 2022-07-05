@@ -1,0 +1,11 @@
+
+<button mat-raised-button (click)="openDialog('Write the name of new board!')" style="margin: 10px;">Add board</button>
+
+<p style="margin: 10px;">List of boards!</p>
+
+<tr *ngFor="let board of boards">
+<mat-card (click)="navigateToSpecificBoard(board.id)" class="card" style="margin: 10px;">
+    {{board.boardName}}
+</mat-card>
+</tr>
+
